@@ -48,6 +48,23 @@ npm run dev -- --open
 To create a production version of your app:
 
 ```sh
+
+## Testing
+
+Run the test suite or watch tests during development:
+
+```sh
+npm test
+npm run test:watch
+```
+
+Generate a coverage report with:
+
+```sh
+npm run test:coverage
+```
+
+The HTML report is written to `coverage/index.html`.sh
 npm run build
 ```
 
