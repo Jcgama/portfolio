@@ -55,8 +55,6 @@
 
 <style>
 	.site-main {
-		width: min(100% - 3rem, 76rem);
-		margin-inline: auto;
 		padding-block: clamp(4rem, 10vw, 8rem);
 	}
 
@@ -196,7 +194,6 @@
 
 	@media (max-width: 600px) {
 		.site-main {
-			width: min(100% - 2rem, 76rem);
 			padding-block: 3.5rem;
 		}
 

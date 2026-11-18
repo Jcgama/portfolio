@@ -52,6 +52,14 @@
 	:global(html) {
 		background: #f5f5f3;
 		scroll-behavior: smooth;
+		overflow-y: scroll;
+		scrollbar-gutter: stable;
+		scrollbar-width: none;
+	}
+
+	:global(html::-webkit-scrollbar) {
+		width: 0;
+		height: 0;
 	}
 
 	:global(body) {
@@ -65,6 +73,8 @@
 
 	:global(.site-main) {
 		flex: 1;
+		width: min(100% - 3rem, 76rem);
+		margin-inline: auto;
 	}
 
 	:global(.visually-hidden) {
@@ -126,7 +136,7 @@
 	}
 
 	.header-inner {
-		max-width: 76rem;
+		width: min(100%, 76rem);
 	}
 
 	.wordmark {
@@ -180,11 +190,16 @@
 	}
 
 	@media (max-width: 600px) {
+		:global(.site-main) {
+			width: min(100% - 2rem, 76rem);
+		}
+
 		.site-header {
 			padding: 1.25rem 1rem 0;
 		}
 
 		.header-inner {
+			width: min(100%, 76rem);
 			gap: 0.75rem;
 		}
 
