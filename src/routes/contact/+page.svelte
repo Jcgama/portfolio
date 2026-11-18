@@ -19,7 +19,7 @@
 			<a
 				class="contact-link contact-link--email"
 				href="mailto:jcgama.uxdesign@gmail.com"
-				aria-label="Email Julio Cezar Gama"
+				aria-label="Email me"
 			>
 				<img src={gmailLogo} alt="" />
 			</a>
@@ -73,7 +73,7 @@
 	}
 
 	h1 {
-		margin: clamp(3.25rem, 7vw, 4.75rem) 0 1.5rem;
+		margin: clamp(3.25rem, 3vw, 4.75rem) 0 1.5rem;
 		font-size: clamp(1.45rem, 3vw, 1.75rem);
 		line-height: 1.2;
 		letter-spacing: -0.03em;
