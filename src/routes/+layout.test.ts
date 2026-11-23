@@ -28,7 +28,7 @@ describe('site layout on the Work page', () => {
 		);
 	});
 
-	it('keeps the home link, skip link, and footer available with the Work content', () => {
+	it('keeps the home link, skip link, and footer contact methods available', () => {
 		render(LayoutHarness);
 
 		expect(screen.getByRole('link', { name: 'jcgama — Work' }).getAttribute('href')).toBe('/');
@@ -36,6 +36,17 @@ describe('site layout on the Work page', () => {
 			'#main-content'
 		);
 		expect(screen.getByRole('main')).toBeTruthy();
-		expect(screen.getByText('Footer content placeholder — details to be added later.')).toBeTruthy();
+		expect(screen.getByText('Get in touch')).toBeTruthy();
+
+		const footerLinks = within(screen.getByRole('navigation', { name: 'Footer contact links' }));
+		expect(footerLinks.getByRole('link', { name: 'Email me' }).getAttribute('href')).toBe(
+			'mailto:jcgama.uxdesign@gmail.com'
+		);
+		expect(
+			footerLinks.getByRole('link', { name: 'Julio Cezar Gama on GitHub' }).getAttribute('href')
+		).toBe('https://github.com/Jcgama');
+		expect(
+			footerLinks.getByRole('link', { name: 'Julio Cezar Gama on LinkedIn' }).getAttribute('href')
+		).toBe('https://www.linkedin.com/in/juliocezargama/');
 	});
 });

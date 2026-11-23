@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import favicon from '#lib/assets/favicon.svg';
+	import gmailLogo from '#lib/assets/contact/gmail-logo.svg';
+	import githubLogo from '#lib/assets/contact/github-logo.svg';
+	import linkedinLogo from '#lib/assets/contact/linkedin-logo.svg';
 	import type { LayoutProps } from './$types';
 
 	let { children }: LayoutProps = $props();
@@ -39,7 +42,36 @@
 
 	<footer class="site-footer">
 		<div class="footer-inner">
-			<p>Footer content placeholder — details to be added later.</p>
+			<p>Get in touch</p>
+			<nav class="footer-contact" aria-label="Footer contact links">
+				<ul>
+					<li>
+						<a href="mailto:jcgama.uxdesign@gmail.com" aria-label="Email me">
+							<img src={gmailLogo} alt="" />
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://github.com/Jcgama"
+							target="_blank"
+							rel="noreferrer"
+							aria-label="Julio Cezar Gama on GitHub"
+						>
+							<img src={githubLogo} alt="" />
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://www.linkedin.com/in/juliocezargama/"
+							target="_blank"
+							rel="noreferrer"
+							aria-label="Julio Cezar Gama on LinkedIn"
+						>
+							<img src={linkedinLogo} alt="" />
+						</a>
+					</li>
+				</ul>
+			</nav>
 		</div>
 	</footer>
 </div>
@@ -139,6 +171,13 @@
 		width: min(100%, 76rem);
 	}
 
+	.footer-inner {
+		width: min(100%, 76rem);
+		justify-content: flex-start;
+		flex-wrap: wrap;
+		gap: 0.75rem 1rem;
+	}
+
 	.wordmark {
 		font-size: 1.25rem;
 		font-weight: 750;
@@ -181,6 +220,30 @@
 		margin: 0;
 		color: #505050;
 		font-size: 0.875rem;
+	}
+
+	.footer-contact ul {
+		gap: 0.25rem;
+	}
+
+	.footer-contact a {
+		display: grid;
+		width: 2.5rem;
+		height: 2.5rem;
+		padding: 0;
+		border-radius: 0.25rem;
+		place-items: center;
+	}
+
+	.footer-contact a:hover {
+		background: #e8e8e5;
+	}
+
+	.footer-contact img {
+		display: block;
+		width: 1.25rem;
+		height: 1.25rem;
+		object-fit: contain;
 	}
 
 	@media (prefers-reduced-motion: reduce) {
