@@ -16,12 +16,9 @@
 
 <main id="main-content" class="site-main work-page">
 	<section class="intro" aria-labelledby="page-title">
-		<p class="eyebrow">Portfolio</p>
-		<h1 id="page-title">Work</h1>
+		<h1 id="page-title">Nice to meet you</h1>
 		<p class="bio-placeholder">
-			<span class="placeholder-label">Short bio placeholder</span>
-			A brief introduction about who am i, what i do, and the kind of work i want to
-			share.
+			I'm Júlio Gama, UX Designer and Software Engineer. I have a passion for creating products that give people what they need, solving problems via a user-centered design. Let's connect and create something great together!
 		</p>
 	</section>
 
@@ -63,18 +60,12 @@
 		margin-bottom: clamp(4rem, 10vw, 8rem);
 	}
 
-	.eyebrow,
-	.placeholder-label,
 	.project-number,
 	.project-meta {
 		font-size: 0.75rem;
 		font-weight: 650;
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
-	}
-
-	.eyebrow {
-		margin: 0 0 0.75rem;
 	}
 
 	h1,
@@ -98,10 +89,6 @@
 		line-height: 1.55;
 	}
 
-	.placeholder-label {
-		display: block;
-		margin-bottom: 0.5rem;
-	}
 
 	.section-heading {
 		display: flex;
