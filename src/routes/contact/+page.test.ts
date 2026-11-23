@@ -10,7 +10,7 @@ describe('Contact page', () => {
 		expect(screen.getByRole('img', { name: 'Julio Cezar Gama' })).toBeTruthy();
 
 		const contactLinks = screen.getByRole('navigation', { name: 'Contact methods' });
-		expect(within(contactLinks).getByRole('link', { name: 'Email Julio Cezar Gama' }).getAttribute('href'))
+		expect(within(contactLinks).getByRole('link', { name: 'Email me' }).getAttribute('href'))
 			.toBe('mailto:jcgama.uxdesign@gmail.com');
 		expect(within(contactLinks).getByRole('link', { name: 'Julio Cezar Gama on LinkedIn' }).getAttribute('href'))
 			.toBe('https://www.linkedin.com/in/juliocezargama/');

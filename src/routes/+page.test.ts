@@ -6,8 +6,8 @@ describe('Work page', () => {
 	it('introduces the portfolio before the selected work', () => {
 		render(WorkPage);
 
-		expect(screen.getByRole('heading', { level: 1, name: 'Work' })).toBeTruthy();
-		expect(screen.getByText('Short bio placeholder')).toBeTruthy();
+		expect(screen.getByRole('heading', { level: 1, name: 'Nice to meet you' })).toBeTruthy();
+		expect(screen.getByText('I\'m Júlio Gama, UX Designer and Software Engineer. I have a passion for creating products that give people what they need, solving problems via a user-centered design. Let\'s connect and create something great together!')).toBeTruthy();
 		expect(screen.getByRole('heading', { level: 2, name: 'Selected work' })).toBeTruthy();
 	});
 
