@@ -36,7 +36,7 @@ describe('site layout on the Work page', () => {
 			'#main-content'
 		);
 		expect(screen.getByRole('main')).toBeTruthy();
-		expect(screen.getByText('Contact me (placeholder)')).toBeTruthy();
+		expect(screen.getByText('Get in touch')).toBeTruthy();
 
 		const footerLinks = within(screen.getByRole('navigation', { name: 'Footer contact links' }));
 		expect(footerLinks.getByRole('link', { name: 'Email me' }).getAttribute('href')).toBe(
