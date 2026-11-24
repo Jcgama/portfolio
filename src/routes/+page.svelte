@@ -1,8 +1,14 @@
 <script lang="ts">
 	const projects = [
-		{ number: '01', imageLabel: 'Project 1 image placeholder' },
-		{ number: '02', imageLabel: 'Project 2 image placeholder' },
-		{ number: '03', imageLabel: 'Project 3 image placeholder' }
+		{ number: '01', imageLabel: 'Project 1 image placeholder', role: 'Researcher', year: '2026' },
+		{ number: '02', imageLabel: 'Project 2 image placeholder', role: 'Designer', year: '2025' },
+		{ number: '03', imageLabel: 'Project 3 image placeholder', role: 'Developer', year: '2024' }
+	];
+	const workHistory = [
+		{ year: '2017 - 2018', role: 'Software Engineer', company: 'Questa' },
+		{ year: '2018 - 2020', role: 'Software Engineer', company: 'Grão investimentos' },
+		{ year: '2020 - 2021', role: 'Software Engineer', company: 'Midway/Riachuelo' },
+		{ year: '2021 - 2026', role: 'Software Engineer', company: 'QuintoAndar' }
 	];
 </script>
 
@@ -24,8 +30,38 @@
 
 	<section class="work" aria-labelledby="work-title">
 		<div class="section-heading">
+			<h2 id="work-title">Places I've worked at</h2>
+		</div>
+
+		<ul class="work-history-list">
+			{#each workHistory.reverse() as work (work.year)}
+				<li>
+					<details class="work-history-item">
+						<summary>
+							<svg viewBox="0 0 24 24" aria-hidden="true">
+								<path
+									d="m9 18 6-6-6-6"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="1.5"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+							</svg>
+							<span>{work.company} - {work.role}, {work.year}</span>
+						</summary>
+						<div class="work-history-details">
+							<p>Details coming soon.</p>
+						</div>
+					</details>
+				</li>
+			{/each}
+		</ul>
+	</section>
+
+	<section class="work" aria-labelledby="work-title">
+		<div class="section-heading">
 			<h2 id="work-title">Selected work</h2>
-			<p>Project details and imagery coming soon</p>
 		</div>
 
 		<ul class="project-grid">
@@ -36,12 +72,12 @@
 							<span>Project image placeholder</span>
 						</div>
 						<div class="project-copy">
-							<p class="project-number">Project {project.number}</p>
+							<p class="project-number">Case study {project.number}</p>
 							<h3 id="project-title-{project.number}">Project title placeholder</h3>
 							<p class="project-description">
 								Project summary placeholder — add the challenge, approach, and outcome.
 							</p>
-							<p class="project-meta">Role and year placeholder</p>
+							<p class="project-meta">{project.role}, {project.year}</p>
 						</div>
 					</article>
 				</li>
@@ -104,10 +140,62 @@
 		letter-spacing: -0.04em;
 	}
 
-	.section-heading > p {
-		margin-bottom: 0;
+	.work-history-list {
+		padding: 0;
+		border-top: 1px solid #d5d5d2;
+		list-style: none;
+		margin-bottom: 4rem;
+	}
+
+	.work-history-item {
+		border-bottom: 1px solid #d5d5d2;
+	}
+
+	.work-history-item span {
+		color: #424242;
+	}
+
+	.work-history-item summary {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		padding-block: 1.125rem;
+		font-weight: 600;
+		line-height: 1.4;
+		cursor: pointer;
+		list-style: none;
+	}
+
+	.work-history-item summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.work-history-item summary:focus-visible {
+		border-radius: 0.125rem;
+		outline: 3px solid #222;
+		outline-offset: 4px;
+	}
+
+	.work-history-item summary svg {
+		width: 1.25rem;
+		height: 1.25rem;
+		flex: 0 0 auto;
+		transition: transform 160ms ease;
+	}
+
+	.work-history-item[open] summary svg {
+		transform: rotate(90deg);
+	}
+
+	.work-history-details {
+		padding: 0 2.25rem 1.25rem 0;
+	}
+
+	.work-history-details p {
+		max-width: 46rem;
+		margin: 0;
 		color: #505050;
-		font-size: 0.875rem;
+		line-height: 1.5;
 	}
 
 	.project-grid {
@@ -200,6 +288,12 @@
 
 		.project-image {
 			min-height: 13rem;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.work-history-item summary svg {
+			transition: none;
 		}
 	}
 </style>
