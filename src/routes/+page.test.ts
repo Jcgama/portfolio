@@ -28,6 +28,7 @@ describe('Work page', () => {
 				})
 			).toBeTruthy();
 			expect(within(project).getByText(/Project summary placeholder/)).toBeTruthy();
+			// todo: fix
 			expect(within(project).getByText('Role and year placeholder')).toBeTruthy();
 		}
 	});
